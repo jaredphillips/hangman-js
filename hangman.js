@@ -1,3 +1,5 @@
+
+
 	var word = "canada";
 	var submit = document.getElementById("button");
 	// var guess = document.getElementById("field");
@@ -5,13 +7,18 @@
 	var boardLength = wordArray.boardLength;
 	var displayBoardArray = ['_','_','_','_','_','_'];
 	var guessedLetterArray = [];
+	var turnsLeft = 10;
 
 function guessedLetter (guess) {
+	
+
 	for(i = 0; i < wordArray.length; i += 1)
 		if(guess == wordArray[i]) {
 			displayBoardArray[i] = guess;
-	} else {
-		guessedLetterArray.push(guess);
+	} 
+		else if (displayBoardArray[i] == '_') {
+			guessedLetterArray.push(guess);
+			turnsLeft -= 1;
 	}
 }
 
@@ -23,4 +30,13 @@ $(function() {
 		guessedLetter(guess);
 	});
 });
+
+
+
+
+
+//.bind( eventType [, eventData ], handler(eventObject) )
+
+
+
 
