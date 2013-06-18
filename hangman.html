@@ -1,0 +1,44 @@
+<html>
+<head>
+	 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+	<title></title>
+</head>
+<body>
+
+	<h1>Let's Play a Game of Hangman</h1>
+
+	<script>
+
+	var word = "canada";
+	var letterArray = word.split('');
+	var boardLength = letterArray.boardLength;
+	var displayBoardArray = ['_','_','_','_','_','_']
+	var guessedLetterArray = []
+
+function guessedLetter (guess) {
+	for(i = 0; i < letterArray.length; i += 1)
+		if(guess == letterArray[i]) {
+			displayBoardArray[i] = guess;
+	} else {
+		guessedLetterArray.push(guess)
+		break
+	}
+}
+
+
+guessedLetter("a");
+guessedLetter("y");
+
+
+
+
+
+
+
+
+
+	</script>
+
+</body>
+</html>
+
