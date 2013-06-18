@@ -1,6 +1,6 @@
 	var word = "canada";
-	var guess = document.getElementById("field");
 	var submit = document.getElementById("button");
+	// var guess = document.getElementById("field");
 	var wordArray = word.split('');
 	var boardLength = wordArray.boardLength;
 	var displayBoardArray = ['_','_','_','_','_','_'];
@@ -15,6 +15,12 @@ function guessedLetter (guess) {
 	}
 }
 
-$("#target").click(function() {
-  alert("Handler for .click() called.");
+// Take string and assign it to guess var
+
+$(function() {
+	$('#button').click(function(event) {
+		var guess = $('#field').val();
+		guessedLetter(guess);
+	});
 });
+
