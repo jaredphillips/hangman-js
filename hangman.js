@@ -1,26 +1,37 @@
-	var word = "canada";
-	var submit = document.getElementById("button");
-	// var guess = document.getElementById("field");
-	var wordArray = word.split('');
-	var boardLength = wordArray.boardLength;
-	var displayBoardArray = ['_','_','_','_','_','_'];
-	var guessedLetterArray = [];
+var word = "canada";
+var submit = document.getElementById("button");
+var wordArray = word.split('');
+var guessedLetterArray = [];
+var boardArray = [];
+var turnsLeft = 10;
+
+setUpBoard(word);
 
 function guessedLetter (guess) {
-	for(i = 0; i < wordArray.length; i += 1)
+	for(i = 0; i < wordArray.length; i++){
 		if(guess == wordArray[i]) {
-			displayBoardArray[i] = guess;
-	} else {
-		guessedLetterArray.push(guess);
+			boardArray[i] = guess;
+		}
 	}
+	guessedLetterArray.push(guess);
+	turnsLeft--;
 }
 
-// Take string and assign it to guess var
-
-$(function() {
-	$('#button').click(function(event) {
-		var guess = $('#field').val();
-		guessedLetter(guess);
-	});
+$("#board").text(displayBoard());
+$("#button").click(function(event){
+	var guess = $('ul li #field').val();
+	guessedLetter(guess);
+	$("#board").text(displayBoard());
 });
 
+function setUpBoard (word) {
+	var boardLength = word.length;
+	for (var i = 0; i < boardLength; i++){
+		boardArray.push(" _ ");
+	}
+	return boardArray;
+}
+
+function displayBoard () {
+	return boardArray.join(" ");
+}
