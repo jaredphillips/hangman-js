@@ -51,10 +51,21 @@ function guessedLetter (guess) {
 		}	
 	
 	display();
+	gameEnd();
 };
 
 function putOnBoard(guess, i) {
 	displayBoardArray[i] = guess;
+};
+
+function gameEnd() {
+
+	if(displayBoardArray.indexOf('_') == -1){
+		alert('Congratulations! You win.');
+	}
+	else if(turnsLeft == 0){
+		alert("Sorry, you've lost. The word was " + word + ".");
+	}
 };
 
 
