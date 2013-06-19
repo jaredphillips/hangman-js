@@ -8,7 +8,6 @@
 	var guessedLetterArray = [];
 	var turnsLeft = 10;
 
-
 $(function() {
 	display();
 });
@@ -37,6 +36,7 @@ function display () {
 
 function guessedLetter (guess) {
 	var goodGuess = false;
+	guess = guess.toLowerCase();
 
 		for(i = 0; i < wordArray.length; i += 1){
 			if(guess == wordArray[i]) {
