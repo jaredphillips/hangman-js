@@ -1,4 +1,5 @@
-var word = "canada";
+var wordArray = ["Canada", "Japan", "China", "England"];
+var word = wordArray[Math.floor(Math.random() * wordArray.length)];
 var submit = document.getElementById("button");
 var wordArray = word.split('');
 var guessedLetterArray = [];
