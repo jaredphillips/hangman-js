@@ -20,7 +20,7 @@ $(function() {
 		guessedLetter(guess);
 	});
 });
-//pushes value entered in text field to guessedLetter function
+//pushes letter entered in text field to guessedLetter function
 
 
 function display () {
@@ -32,20 +32,24 @@ function display () {
 		$('#turnsleft').html(turnsLeft).show();
 	});
 }
+//displays board and turnsleft to window
+
 
 function guessedLetter (guess) {
 	var goodGuess = false;
 
 		for(i = 0; i < wordArray.length; i += 1){
 			if(guess == wordArray[i]) {
-					putOnBoard(guess, i);
-				// goodGuess = true;
+				putOnBoard(guess, i);
+				goodGuess = true;
 			} 
-			else if (guess != wordArray[i]) {
-				guessedLetterArray.push(guess);
-				turnsLeft -= 1;	
-			}
 		}
+	
+		if (goodGuess == false) {
+			guessedLetterArray.push(guess);
+			turnsLeft -= 1;	
+		}	
+	
 	display();
 };
 
