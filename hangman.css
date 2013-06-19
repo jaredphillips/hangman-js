@@ -1,13 +1,12 @@
 body {
 	text-align: center;
-	margin-top: 12%;
-	background-color: brown;
-	background-image: url('hangman.jpg');
+	margin-top: 4%;
+	background-color: lightgrey;
 }
 
 h1 {
 	font-family: 'Rye', cursive;
-	font-size: 50px;
+	font-size: 70px;
 	margin-bottom: 7%;
 }
 
@@ -31,5 +30,17 @@ li {
 	font-family: 'Special Elite', cursive;
 	font-size: 55px;
 	color: red;
+}
+
+p {
+	color: red;
+	font-size: 40px;
+	font-family: 'Special Elite', cursive;
+}
+
+#guess {
+	color: red;
+	font-size: 40px;
+	font-family: 'Special Elite', cursive;
 }
 
