@@ -46,6 +46,9 @@ function guessedLetter (guess) {
 		}
 	
 		if (goodGuess == false) {
+			if (guessedLetterArray.indexOf(guess) != -1) {
+				alert('You already guessed that letter, bud. We still going to deduct your turn because that was a dumb move by you.');
+			}
 			guessedLetterArray.push(guess);
 			turnsLeft -= 1;	
 		}	
@@ -53,6 +56,7 @@ function guessedLetter (guess) {
 	display();
 	gameEnd();
 };
+//places correct letter guess on board or deducts turnsLeft and pushes guessed letter into an array.
 
 function putOnBoard(guess, i) {
 	displayBoardArray[i] = guess;
